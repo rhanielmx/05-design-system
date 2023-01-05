@@ -22,7 +22,7 @@ jobs:
       - run: npm run build
         env:
           TURBO_TOKEN: zt4P04r0WPxAl5RB0vpwh58w
-          TURBO_TEAMgit add .: rocketseat-rhaniel
+          TURBO_TEAM: rocketseat-rhaniel
 
       - name: Deploy storybook
         working-directory: ./packages/docs
