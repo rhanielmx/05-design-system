@@ -1,0 +1,2 @@
+import{A as t}from"./index.0771329a.js";import"./index.6193b7d5.js";import"./iframe.c866d08d.js";import"./index.bda6b4b0.js";import"./jsx-runtime.12d09c34.js";const m={title:"Data display/Avatar",component:t,args:{src:"https://github.com/rhanielmx.png",alt:"Rhaniel Xavier"}},p={},c={args:{src:void 0}},e=["Primary","WithFallback"];export{p as Primary,c as WithFallback,e as __namedExportsOrder,m as default};
+//# sourceMappingURL=Avatar.stories.f8cbdde7.js.map
