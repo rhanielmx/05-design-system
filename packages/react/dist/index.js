@@ -63,7 +63,9 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Toast: () => Toast2,
+  Tooltip: () => Tooltip2
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -526,6 +528,107 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Tooltip/index.tsx
+var TooltipPrimitive = __toESM(require("@radix-ui/react-tooltip"));
+
+// src/components/Tooltip/styles.ts
+var Tooltip = __toESM(require("@radix-ui/react-tooltip"));
+var TooltipTrigger = styled(Tooltip.Trigger, {
+  backgroundColor: "$gray600",
+  color: "$white",
+  padding: "$4 $6",
+  width: "fit-content",
+  borderRadius: "$sm"
+});
+var TooltipContent = styled(Tooltip.Content, {
+  backgroundColor: "$gray900",
+  color: "$gray100",
+  padding: "$3 $4",
+  borderRadius: "$sm"
+});
+var TooltipArrow = styled(Tooltip.Arrow, {
+  fill: "$gray900"
+});
+
+// src/components/Tooltip/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Tooltip2({ triggerText, contentText }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive.Provider, { delayDuration: 500, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipPrimitive.Root, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipTrigger, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Box, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, { size: "md", children: triggerText }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive.Portal, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipContent, { sideOffset: 5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, { size: "sm", children: contentText }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipArrow, {})
+    ] }) })
+  ] }) });
+}
+Tooltip2.displayName = "Tooltip";
+
+// src/components/Toast/index.tsx
+var ToastPrimitive = __toESM(require("@radix-ui/react-toast"));
+var import_phosphor_react3 = require("phosphor-react");
+
+// src/components/Toast/styles.ts
+var Toast = __toESM(require("@radix-ui/react-toast"));
+var ToastRoot = styled(Toast.Root, {
+  position: "relative",
+  backgroundColor: "$gray800",
+  border: "4px solid $gray600",
+  borderRadius: "$sm",
+  padding: "$3 $5",
+  display: "flex",
+  flexDirection: "column"
+});
+var ToastTitle = styled(Toast.Title, {
+  color: "$white",
+  fontWeight: "$bold",
+  fontSize: "$sm"
+});
+var ToastDescription = styled(Toast.Description, {
+  color: "$gray200",
+  fontWeight: "$regular",
+  fontSize: "$sm"
+});
+var ToastAction = styled(Toast.Action, {});
+var ToastClose = styled(Toast.Close, {
+  position: "absolute",
+  top: "$4",
+  right: "$4",
+  color: "$gray200",
+  "&:hover": {
+    cursor: "pointer"
+  }
+});
+var ToastViewport = styled(Toast.Viewport, {
+  position: "fixed",
+  top: "$16",
+  left: "$4",
+  display: "flex",
+  flexDirection: "column",
+  padding: 0,
+  gap: "$1",
+  width: 360,
+  maxWidth: "100vw",
+  margin: 0,
+  listStyle: "none",
+  zIndex: 2147483647,
+  outline: "none"
+});
+
+// src/components/Toast/index.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
+function Toast2() {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(ToastPrimitive.Provider, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Button, { children: "Open" }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(ToastRoot, { open: true, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastTitle, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Heading, { children: "Agendamento realizado" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastDescription, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Text, { children: "Quarta-feira, 23 de Outubro \xE0s 16h" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastClose, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_phosphor_react3.X, { size: 20 }) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastViewport, {})
+  ] });
+}
+Toast2.displayName = "Toast";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -536,5 +639,7 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast,
+  Tooltip
 });

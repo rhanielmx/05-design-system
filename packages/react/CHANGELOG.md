@@ -1,5 +1,11 @@
 # @ignite-ui-rhaniel/react
 
+## 2.2.0
+
+### Minor Changes
+
+- Added tooltip and toast components
+
 ## 2.1.0
 
 ### Minor Changes
